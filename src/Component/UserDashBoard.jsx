@@ -67,7 +67,7 @@ export default function UserDashboard() {
 
   if (loading) {
     return <div className="container d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-      <img src="src\Component\Loading.gif" alt="Loading" /><br />
+      <img src="src\assets\Loading.gif" alt="Loading" /><br />
       <h2>Loading....</h2>
     </div>
       ;

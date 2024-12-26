@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Spinner from "./Spiner";
 
 
 export default function Navbar() {
@@ -33,6 +34,11 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/explore">
                                     Explore
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/animation">
+                                    Spin
                                 </Link>
                             </li>
                         </ul>
