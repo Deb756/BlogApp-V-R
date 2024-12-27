@@ -34,8 +34,10 @@ export default function UserDashboard() {
       setLoading(false);
     }
   };
+  // ------------------------
 
-  // Function to handle delete
+
+  // Function to handle delete post
   const handleDelete = async (id) => {
     const postDltApiKey = import.meta.env.VITE_POST_DLT_API_KEY;
     console.log(postDltApiKey);
@@ -59,6 +61,60 @@ export default function UserDashboard() {
       }
     }
   };
+  // -------------------------------
+
+  // Post Add To the User profile Feature 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Collect form data
+    const postData = {
+      caption: document.getElementById("postTitle").value,
+      message: document.getElementById("postContent").value,
+    };
+
+    // Call the handleAddPost function
+    handleAddPost(postData);
+    document.getElementById("createPostForm").reset();
+  };
+
+
+  // Function to handle Add Post
+  const handleAddPost = async (postData) => {
+    const postAddApiKey = import.meta.env.VITE_POST_ADD_API_KEY;
+    // console.log("API Endpoint:", postAddApiKey);
+    // console.log(userData.id);
+
+
+    try {
+      // Ensure `userData.id` is valid before constructing the API endpoint
+      if (!userData || !userData.id) {
+        throw new Error("User ID is missing.");
+      }
+
+      const response = await fetch(`${postAddApiKey}${userData.id}`, {
+        method: "POST", // Set to POST for adding a post
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData), // Convert postData to JSON
+      });
+
+      if (response.ok) {
+        alert("Post added successfully!");
+        // Optionally refetch posts to update the UI
+        fetchUserData();
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to add the post: ${errorData.message || "Unknown error"}`);
+      }
+    } catch (error) {
+      console.error("Error adding the post:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+  // -------------------------------------
+
 
   // Fetch user data on component mount
   useEffect(() => {
@@ -76,6 +132,7 @@ export default function UserDashboard() {
   if (!userData) {
     return <Signup />;
   }
+  // -------------------------
 
   return (
     <>
@@ -83,7 +140,7 @@ export default function UserDashboard() {
       <div className="container d-flex justify-content-center align-items-center">
         <h2 className="container my-3">User Posts</h2>
         <button style={{ width: "140px" }}
-          type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          type="button" className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
         >
           Add Post
         </button>
@@ -114,35 +171,35 @@ export default function UserDashboard() {
           ))}
         </div>
       </div>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog ">
-          <div class="modal-content bg-dark text-light">
-            {/* <!-- Modal Header --> */}
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Create a New Post</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog ">
+          <div className="modal-content bg-dark text-light">
+            {/* Modal Header */}
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Create a New Post</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            {/* <!-- Modal Body --> */}
-            <div class="modal-body bg-dark">
+            {/* Modal Body */}
+            <div className="modal-body bg-dark">
               <form id="createPostForm">
-                {/* <!-- Post Title --> */}
-                <div class="mb-3">
-                  <label for="postTitle" class="form-label">Post Title</label>
+                {/* Post Title */}
+                <div className="mb-3">
+                  <label htmlFor="postTitle" className="form-label">Post Title</label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="postTitle"
                     placeholder="Enter post title"
                     required
                   />
                 </div>
 
-                {/* <!-- Post Content --> */}
-                <div class="mb-3">
-                  <label for="postContent" class="form-label">Post Content</label>
+                {/* Post Content */}
+                <div className="mb-3">
+                  <label htmlFor="postContent" className="form-label">Post Content</label>
                   <textarea
-                    class="form-control"
+                    className="form-control"
                     id="postContent"
                     rows="5"
                     placeholder="Write your post content here"
@@ -152,18 +209,19 @@ export default function UserDashboard() {
               </form>
             </div>
 
-            {/* <!-- Modal Footer --> */}
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            {/* Modal Footer */}
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => document.getElementById("createPostForm").reset()}>
                 Cancel
               </button>
-              <button type="submit" class="btn btn-primary" form="createPostForm">
+              <button type="button" className="btn btn-primary" onClick={handleSubmit}>
                 Submit Post
               </button>
             </div>
           </div>
         </div>
       </div>
+
 
     </>
   );
