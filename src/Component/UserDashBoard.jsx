@@ -80,7 +80,15 @@ export default function UserDashboard() {
   return (
     <>
       <Navbar2 user={userData} />
-      <h2 className="container my-3">User Posts</h2>
+      <div className="container d-flex justify-content-center align-items-center">
+        <h2 className="container my-3">User Posts</h2>
+        <button style={{ width: "140px" }}
+          type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        >
+          Add Post
+        </button>
+      </div>
+
       <div className="container my-4">
         <div className="row">
           {userData.posts.map((post) => (
@@ -106,6 +114,57 @@ export default function UserDashboard() {
           ))}
         </div>
       </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content bg-dark text-light">
+            {/* <!-- Modal Header --> */}
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create a New Post</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            {/* <!-- Modal Body --> */}
+            <div class="modal-body bg-dark">
+              <form id="createPostForm">
+                {/* <!-- Post Title --> */}
+                <div class="mb-3">
+                  <label for="postTitle" class="form-label">Post Title</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="postTitle"
+                    placeholder="Enter post title"
+                    required
+                  />
+                </div>
+
+                {/* <!-- Post Content --> */}
+                <div class="mb-3">
+                  <label for="postContent" class="form-label">Post Content</label>
+                  <textarea
+                    class="form-control"
+                    id="postContent"
+                    rows="5"
+                    placeholder="Write your post content here"
+                    required
+                  ></textarea>
+                </div>
+              </form>
+            </div>
+
+            {/* <!-- Modal Footer --> */}
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary" form="createPostForm">
+                Submit Post
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </>
   );
 }
