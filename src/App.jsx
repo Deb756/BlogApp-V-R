@@ -9,6 +9,7 @@ import Login from "./Component/Login";
 import Signup from "./Component/Signup";
 import UserDashboard from "./Component/UserDashBoard";
 import Spinner from "./Component/Spiner";
+import Explore from "./Component/Explore";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<LandingPage />} />
+        <Route path="/explore" element={<Explore />} />
         <Route path="/animation" element={<Spinner />} />
       </Routes>
     </Router>

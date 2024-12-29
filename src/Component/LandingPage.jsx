@@ -14,7 +14,7 @@ export default function BlogLandingPage() {
               Discover amazing stories, insights, and ideas from creators all
               around the world.
             </p>
-            <a href="/eplore" className="btn btn-primary btn-lg mt-3">
+            <a href="/explore" className="btn btn-primary btn-lg mt-3">
               Explore Blogs
             </a>
             <a href="/signup" className="btn btn-outline-light btn-lg mt-3 ms-3">
@@ -40,7 +40,7 @@ export default function BlogLandingPage() {
                   <p className="card-text">
                     Learn how to craft compelling stories that captivate readers.
                   </p>
-                  <a href="#" className="btn btn-sm btn-primary">
+                  <a href="/explore" className="btn btn-sm btn-primary">
                     Read More
                   </a>
                 </div>
@@ -60,7 +60,7 @@ export default function BlogLandingPage() {
                   <p className="card-text">
                     Maximize your daily output with these tried-and-true tips.
                   </p>
-                  <a href="#" className="btn btn-sm btn-primary">
+                  <a href="/explore" className="btn btn-sm btn-primary">
                     Read More
                   </a>
                 </div>
@@ -80,7 +80,7 @@ export default function BlogLandingPage() {
                   <p className="card-text">
                     Discover how minimalism can lead to a more fulfilling life.
                   </p>
-                  <a href="#" className="btn btn-sm btn-primary">
+                  <a href="/explore" className="btn btn-sm btn-primary">
                     Read More
                   </a>
                 </div>
