@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Navbar2 from "./Navbar2";
 import { useSearchParams } from "react-router-dom";
-import Signup from "./Signup";
+import Signup from "./SignUp";
+import SkeletonLoader from "./SkeletonLoader";
 
 export default function UserDashboard() {
   const [userData, setUserData] = useState(null);
@@ -199,18 +200,14 @@ export default function UserDashboard() {
 
   // -------------------------------------
 
-
   // Fetch user data on component mount
+  
   useEffect(() => {
     fetchUserData();
   }, [searchParams]);
 
   if (loading) {
-    return <div className="container d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-      <img src="src\assets\Loading.gif" alt="Loading" /><br />
-      <h2>Loading....</h2>
-    </div>
-      ;
+    return <SkeletonLoader />;
   }
 
   if (!userData) {

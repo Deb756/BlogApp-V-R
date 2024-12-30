@@ -36,11 +36,16 @@ export default function Navbar() {
                                     Explore
                                 </Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/animation">
                                     Spin
                                 </Link>
-                            </li>
+                            </li> */}
+                            {/* <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/skeleton">
+                                    Skeliton
+                                </Link>
+                            </li> */}
                         </ul>
                         <ul className="navbar-nav gap-2 mb-lg-0">
                             <li className="nav-item">

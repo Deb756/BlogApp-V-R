@@ -10,6 +10,7 @@ import Signup from "./Component/Signup";
 import UserDashboard from "./Component/UserDashBoard";
 import Spinner from "./Component/Spiner";
 import Explore from "./Component/Explore";
+import SkeletonLoader from "./Component/SkeletonLoader";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/logout" element={<LandingPage />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/animation" element={<Spinner />} />
+        <Route path="/skeleton" element={<SkeletonLoader />} />
       </Routes>
     </Router>
   );

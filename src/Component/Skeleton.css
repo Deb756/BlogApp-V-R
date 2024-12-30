@@ -1,0 +1,79 @@
+/* Base Skeleton Animation */
+.skeleton-navbar, .skeleton-heading, .skeleton-button, .skeleton-card, .skeleton-title, .skeleton-text {
+    background: #e0e0e0;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 4px;
+  }
+  
+  /* Navbar */
+  .skeleton-navbar {
+    height: 60px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Heading */
+  .skeleton-heading {
+    height: 30px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  /* Button */
+  .skeleton-button {
+    height: 40px;
+    width: 140px;
+    margin: 10px 0;
+  }
+  
+  .skeleton-button.small {
+    height: 30px;
+    width: 80px;
+  }
+  
+  /* Card */
+  .skeleton-card {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    padding: 15px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .skeleton-title {
+    height: 20px;
+    width: 70%;
+    margin-bottom: 10px;
+  }
+  
+  .skeleton-text {
+    height: 14px;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  
+  .skeleton-text.small {
+    height: 12px;
+    width: 60%;
+    margin-bottom: 20px;
+  }
+  
+  .skeleton-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+  }
+  
+  /* Loading Animation */
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
