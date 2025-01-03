@@ -6,7 +6,7 @@ export default function Explore() {
     <>
     <Navbar />
     <div className="container my-4">
-
+      
     </div>
     </>
   )
