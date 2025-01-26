@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 export default function BlogLandingPage() {
   return (
@@ -14,12 +15,12 @@ export default function BlogLandingPage() {
               Discover amazing stories, insights, and ideas from creators all
               around the world.
             </p>
-            <a href="/explore" className="btn btn-primary btn-lg mt-3">
+            <Link to="/explore" className="btn btn-primary btn-lg mt-3">
               Explore Blogs
-            </a>
-            <a href="/signup" className="btn btn-outline-light btn-lg mt-3 ms-3">
+            </Link>
+            <Link to="/signup" className="btn btn-outline-light btn-lg mt-3 ms-3">
               Join Now
-            </a>
+            </Link>
           </div>
         </header>
 
@@ -40,9 +41,9 @@ export default function BlogLandingPage() {
                   <p className="card-text">
                     Learn how to craft compelling stories that captivate readers.
                   </p>
-                  <a href="/explore" className="btn btn-sm btn-primary">
+                  <Link to="/explore" className="btn btn-sm btn-primary">
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -60,9 +61,9 @@ export default function BlogLandingPage() {
                   <p className="card-text">
                     Maximize your daily output with these tried-and-true tips.
                   </p>
-                  <a href="/explore" className="btn btn-sm btn-primary">
+                  <Link to="/explore" className="btn btn-sm btn-primary">
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -80,9 +81,9 @@ export default function BlogLandingPage() {
                   <p className="card-text">
                     Discover how minimalism can lead to a more fulfilling life.
                   </p>
-                  <a href="/explore" className="btn btn-sm btn-primary">
+                  <Link to="/explore" className="btn btn-sm btn-primary">
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -97,9 +98,9 @@ export default function BlogLandingPage() {
               Join our vibrant community of writers and readers. Share your
               stories and connect with like-minded individuals.
             </p>
-            <a href="/signup" className="btn btn-light btn-lg">
+            <Link to="/signup" className="btn btn-light btn-lg">
               Get Started
-            </a>
+            </Link>
           </div>
         </section>
       </div>

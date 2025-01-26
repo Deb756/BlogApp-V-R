@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -37,7 +38,7 @@ export default function Login() {
             <button type="submit" className="btn btn-success w-100">Login</button>
           </form>
           <p className="text-center mt-3">
-            Don't have an account? <a href="/signup">Sign Up</a>
+            Don't have an account? <Link to="/signup">Sign Up</Link>
           </p>
         </div>
       </div>

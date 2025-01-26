@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
 
@@ -145,7 +145,7 @@ export default function Signup() {
             </button>
           </form>
           <p className="text-center mt-3">
-            Already have an account? <a href="/login">Sign In</a>
+            Already have an account? <Link to="/login">Sign In</Link>
           </p>
         </div>
       </div>
